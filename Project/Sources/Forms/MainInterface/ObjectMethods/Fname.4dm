@@ -1,0 +1,1 @@
+Form:C1466.currentCompany.name:=Split string:C1554(Form:C1466.currentCompany.name; " "; sk ignore empty strings:K86:1+sk trim spaces:K86:2).join(" ")

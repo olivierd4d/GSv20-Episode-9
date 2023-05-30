@@ -1,0 +1,16 @@
+.label{
+	stroke: gray;
+}
+.infoCounter{
+	stroke: gray;
+}
+.mainListBox{
+	fill : white ;
+	alternateFill : whitesmoke;
+}
+
+.secondaryListBox{
+	fill:white;
+	alternateFill: #E4F0F4;
+
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="GestionProjets" uuid="3EE33FA00A9944FFAB92A7C6DBB6E489" collation_locale="fr">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="Company" uuid="87981C2816D54117B7007192ABF126EA" id="1" prevent_journaling="true">
+		<field name="UUID" uuid="0F4F52EF4BF5420F89C91607DE8513F9" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="name" uuid="09E1C76FFF884A828ADF217590A8C8CB" type="10" limiting_length="255" id="2"/>
+		<field name="domain" uuid="8E410905848C4B4687637B27E4EFA1AC" type="10" limiting_length="255" id="3"/>
+		<field name="comment" uuid="42263DC0725C406585EEADBEEE6B3C35" type="10" id="4">
+			<field_extra>
+				<editor_field_info>
+					<color red="255" green="255" blue="255" alpha="0"/>
+				</editor_field_info>
+			</field_extra>
+		</field>
+		<field name="legalStructure" uuid="AFE343A84C2F45239173ECB157DC61D5" type="10" limiting_length="255" id="5"/>
+		<primary_key field_name="UUID" field_uuid="0F4F52EF4BF5420F89C91607DE8513F9"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="40" top="40" width="156.04469299316" height="182.04721069336"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Employee" uuid="3F64627AB5034816911070C03B333179" id="7">
+		<field name="UUID" uuid="BE2839A7EB674F6FA7D3DEC47C06E6AC" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="UUID_Company" uuid="8F29166736BA47F8B6AA6F7B2F57FBC6" type="10" store_as_UUID="true" id="2"/>
+		<field name="firstName" uuid="9CF66E0900D04317ADA273322DEB8368" type="10" limiting_length="255" id="3"/>
+		<field name="lastName" uuid="C659437087D249BC9BB0F4AAF8DC9C8D" type="10" limiting_length="255" id="4"/>
+		<field name="civility" uuid="6CEEF522297D43A19438E37235EEBF4F" type="10" limiting_length="255" id="5"/>
+		<field name="birthDate" uuid="9D8778366EF8441198BAC1A2B02EABA4" type="8" id="6"/>
+		<primary_key field_name="UUID" field_uuid="BE2839A7EB674F6FA7D3DEC47C06E6AC"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="375.84646606445" top="42.891510009766" width="139.85723876953" height="177.36175537109"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<relation uuid="EB74A37106A844329173DC445AD805A3" name_Nto1="company" name_1toN="employees" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="8F29166736BA47F8B6AA6F7B2F57FBC6" name="UUID_Company">
+				<table_ref uuid="3F64627AB5034816911070C03B333179" name="Employee"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0F4F52EF4BF5420F89C91607DE8513F9" name="UUID">
+				<table_ref uuid="87981C2816D54117B7007192ABF126EA" name="Company"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="255" green="255" blue="255" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<index kind="regular" unique_keys="true" uuid="B564400E2AC5478EA71BE6A8BB47186A" type="7">
+		<field_ref uuid="BE2839A7EB674F6FA7D3DEC47C06E6AC" name="UUID">
+			<table_ref uuid="3F64627AB5034816911070C03B333179" name="Employee"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="C50AF7F161154501A7A72828A527E1C0" type="7">
+		<field_ref uuid="0F4F52EF4BF5420F89C91607DE8513F9" name="UUID">
+			<table_ref uuid="87981C2816D54117B7007192ABF126EA" name="Company"/>
+		</field_ref>
+	</index>
+	<base_extra __stringCompHash="icu:72.1.0" __keywordBuildingHash="icu:72.1.0">
+		<journal_file journal_file_enabled="true"/>
+	</base_extra>
+</base>

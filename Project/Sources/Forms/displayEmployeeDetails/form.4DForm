@@ -1,0 +1,124 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"Lname1": {
+					"type": "text",
+					"text": "Nom :",
+					"top": 21,
+					"left": 39,
+					"width": 37,
+					"height": 16,
+					"class": "label"
+				},
+				"Fname1": {
+					"type": "input",
+					"left": 156,
+					"top": 21,
+					"width": 200,
+					"height": 17,
+					"dataSource": "Form:C1466.employee.firstName",
+					"sizingX": "grow",
+					"enterable": false,
+					"focusable": true
+				},
+				"Ldomain1": {
+					"type": "text",
+					"text": "Prénom :",
+					"top": 48,
+					"left": 39,
+					"width": 63,
+					"height": 16,
+					"class": "label"
+				},
+				"Fdomain1": {
+					"type": "input",
+					"left": 156,
+					"top": 48,
+					"width": 200,
+					"height": 17,
+					"dataSource": "Form:C1466.employee.lastName",
+					"sizingX": "grow",
+					"enterable": false,
+					"focusable": true
+				},
+				"Lcomment1": {
+					"type": "text",
+					"text": "Civilité :",
+					"top": 76,
+					"left": 39,
+					"width": 92,
+					"height": 16,
+					"class": "label"
+				},
+				"Fdomain2": {
+					"type": "input",
+					"left": 156,
+					"top": 75,
+					"width": 200,
+					"height": 17,
+					"dataSource": "Form:C1466.employee.civility",
+					"sizingX": "grow",
+					"enterable": false,
+					"focusable": true
+				},
+				"Lcomment2": {
+					"type": "text",
+					"text": "Date naissance :",
+					"top": 106,
+					"left": 39,
+					"width": 102,
+					"height": 16,
+					"class": "label"
+				},
+				"Fdomain3": {
+					"type": "input",
+					"left": 156,
+					"top": 105,
+					"width": 200,
+					"height": 17,
+					"dataSource": "Form:C1466.employee.birthDate",
+					"sizingX": "grow",
+					"enterable": false,
+					"focusable": true
+				}
+			}
+		}
+	],
+	"geometryStamp": 3,
+	"method": "method.4dm"
+}

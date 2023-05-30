@@ -1,0 +1,446 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"events": [
+		"onLoad",
+		"onClick",
+		"onDataChange"
+	],
+	"windowTitle": "Liste des sociétés",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"LB_Companies": {
+					"type": "listbox",
+					"left": 5,
+					"top": 34,
+					"width": 367,
+					"height": 423,
+					"events": [
+						"onClick",
+						"onHeaderClick",
+						"onDataChange",
+						"onSelectionChange"
+					],
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.companies",
+					"horizontalLineStroke": "transparent",
+					"verticalLineStroke": "transparent",
+					"currentItemSource": "Form:C1466.currentCompany",
+					"sizingX": "grow",
+					"resizingMode": "legacy",
+					"sizingY": "grow",
+					"method": "ObjectMethods/LB_Companies.4dm",
+					"hideFocusRing": true,
+					"scrollbarHorizontal": "hidden",
+					"class": "mainListBox",
+					"selectionMode": "single",
+					"columns": [
+						{
+							"header": {
+								"text": "Nom",
+								"name": "Nom",
+								"class": "label"
+							},
+							"name": "Name",
+							"footer": {
+								"name": "Pied1"
+							},
+							"dataSource": "This:C1470.name",
+							"minWidth": 70,
+							"truncateMode": "none",
+							"width": 128,
+							"enterable": false
+						},
+						{
+							"header": {
+								"name": "Domaine",
+								"text": "Domaine",
+								"class": "label"
+							},
+							"name": "Domain",
+							"footer": {
+								"name": "Pied2"
+							},
+							"dataSource": "This:C1470.domain",
+							"minWidth": 70,
+							"width": 200,
+							"enterable": false
+						}
+					]
+				},
+				"btnAddCompany": {
+					"type": "button",
+					"text": "",
+					"top": 463,
+					"left": 5,
+					"width": 24,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"style": "custom",
+					"icon": "/RESOURCES/Images/Buttons/add-24x24.png",
+					"iconFrames": 4,
+					"method": "ObjectMethods/btnAddCompany.4dm",
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/AjoutSociété"
+					}
+				},
+				"CompaniesLength": {
+					"type": "input",
+					"left": 239,
+					"top": 467,
+					"width": 131,
+					"height": 17,
+					"dataSource": "Form:C1466.companies.length",
+					"enterable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dataSourceTypeHint": "integer",
+					"sizingX": "move",
+					"sizingY": "move",
+					"focusable": false,
+					"contextMenu": "none",
+					"numberFormat": "###,###,##0;;",
+					"class": "infoCounter"
+				},
+				"btnDeleteCompany": {
+					"type": "button",
+					"text": "",
+					"top": 463,
+					"left": 37,
+					"width": 24,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"style": "custom",
+					"icon": "/RESOURCES/Images/Buttons/delete-24x24.png",
+					"iconFrames": 4,
+					"method": "ObjectMethods/btnDeleteCompany.4dm",
+					"sizingX": "fixed",
+					"sizingY": "move"
+				},
+				"Lname": {
+					"type": "text",
+					"text": "Nom :",
+					"top": 34,
+					"left": 387,
+					"width": 130,
+					"height": 16,
+					"class": "label"
+				},
+				"Fname": {
+					"type": "input",
+					"left": 525,
+					"top": 34,
+					"width": 418,
+					"height": 17,
+					"dataSource": "Form:C1466.currentCompany.name",
+					"sizingX": "grow",
+					"enterable": false,
+					"focusable": true,
+					"method": "ObjectMethods/Fname.4dm"
+				},
+				"Ldomain": {
+					"type": "text",
+					"text": "Domaine :",
+					"top": 58,
+					"left": 387,
+					"width": 130,
+					"height": 16,
+					"class": "label"
+				},
+				"Fdomain": {
+					"type": "input",
+					"left": 525,
+					"top": 58,
+					"width": 418,
+					"height": 17,
+					"dataSource": "Form:C1466.currentCompany.domain",
+					"sizingX": "grow",
+					"enterable": false,
+					"focusable": true,
+					"method": "ObjectMethods/Fdomain.4dm"
+				},
+				"Lcomment": {
+					"type": "text",
+					"text": "Commentaire :",
+					"top": 106,
+					"left": 387,
+					"width": 130,
+					"height": 16,
+					"class": "label"
+				},
+				"Fcomment": {
+					"type": "input",
+					"left": 525,
+					"top": 106,
+					"width": 403,
+					"height": 65,
+					"dataSource": "Form:C1466.currentCompany.comment",
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "visible",
+					"sizingX": "grow",
+					"enterable": false,
+					"focusable": true
+				},
+				"Splitter": {
+					"type": "splitter",
+					"left": 376,
+					"top": 0,
+					"width": 2,
+					"height": 560,
+					"sizingY": "grow",
+					"bottom": 560,
+					"borderStyle": "solid",
+					"stroke": "#c0c0c0"
+				},
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 507,
+					"left": 97,
+					"width": 275,
+					"height": 11,
+					"fill": "#ffff00",
+					"sizingY": "move",
+					"sizingX": "move",
+					"visibility": "visible"
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 507,
+					"left": 380,
+					"width": 376,
+					"height": 10,
+					"fill": "#ffff00",
+					"sizingY": "move",
+					"sizingX": "fixed",
+					"visibility": "visible"
+				},
+				"btnCancel": {
+					"type": "button",
+					"text": "",
+					"top": 463,
+					"left": 893,
+					"width": 24,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"style": "custom",
+					"icon": "/RESOURCES/Images/Buttons/cancel-24x24.png",
+					"iconFrames": 4,
+					"method": "ObjectMethods/btnCancel.4dm",
+					"sizingX": "move",
+					"sizingY": "move",
+					"visibility": "hidden"
+				},
+				"btnAccept": {
+					"type": "button",
+					"text": "",
+					"top": 463,
+					"left": 921,
+					"width": 24,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"style": "custom",
+					"icon": "/RESOURCES/Images/Buttons/save-24x24.png",
+					"iconFrames": 4,
+					"method": "ObjectMethods/btnAccept.4dm",
+					"sizingX": "move",
+					"sizingY": "move",
+					"visibility": "hidden"
+				},
+				"btnVisualize": {
+					"type": "button",
+					"text": "Visualisation",
+					"top": 463,
+					"left": 382,
+					"width": 110,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"style": "custom",
+					"icon": "/RESOURCES/Images/Buttons/eye-24x24.png",
+					"iconFrames": 4,
+					"method": "ObjectMethods/btnVisualize.4dm",
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"textPlacement": "right",
+					"popupPlacement": "linked"
+				},
+				"LB_Employees": {
+					"type": "listbox",
+					"left": 525,
+					"top": 178,
+					"width": 419,
+					"height": 279,
+					"events": [
+						"onClick",
+						"onDoubleClick",
+						"onDataChange",
+						"onSelectionChange",
+						"onHeaderClick"
+					],
+					"listboxType": "collection",
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.currentCompany.employees",
+					"horizontalLineStroke": "transparent",
+					"verticalLineStroke": "transparent",
+					"currentItemSource": "Form:C1466.currentEmployee",
+					"method": "ObjectMethods/LB_Employees.4dm",
+					"resizingMode": "rightToLeft",
+					"scrollbarHorizontal": "hidden",
+					"hideFocusRing": true,
+					"class": "secondaryListBox",
+					"selectionMode": "single",
+					"columns": [
+						{
+							"header": {
+								"text": "Prénom",
+								"name": "Header_firstName",
+								"class": "label"
+							},
+							"name": "col_firstName",
+							"footer": {
+								"name": "Footer1"
+							},
+							"width": 143,
+							"dataSource": "This:C1470.firstName",
+							"resizable": false,
+							"enterable": false
+						},
+						{
+							"header": {
+								"name": "Header_lastName",
+								"text": "Nom",
+								"class": "label"
+							},
+							"name": "col_lastName",
+							"footer": {
+								"name": "Footer2"
+							},
+							"width": 259,
+							"dataSource": "This:C1470.lastName",
+							"resizable": true,
+							"enterable": false
+						}
+					]
+				},
+				"Text": {
+					"type": "text",
+					"text": "Employés :",
+					"top": 178,
+					"left": 387,
+					"width": 130,
+					"height": 16,
+					"fontStyle": "normal",
+					"fontWeight": "normal",
+					"class": "label"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 6,
+					"left": 137,
+					"width": 236,
+					"height": 23,
+					"stroke": "#c0c0c0",
+					"borderRadius": 10,
+					"fill": "#F5F8FB",
+					"sizingY": "fixed",
+					"sizingX": "grow"
+				},
+				"Static Picture1": {
+					"type": "picture",
+					"top": 10,
+					"left": 143,
+					"width": 16,
+					"height": 16,
+					"picture": "/RESOURCES/images/icon/magnifier-medium.png",
+					"sizingY": "fixed",
+					"sizingX": "fixed"
+				},
+				"search": {
+					"type": "input",
+					"left": 165,
+					"top": 9,
+					"width": 192,
+					"height": 17,
+					"enterable": true,
+					"hideFocusRing": true,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dataSource": "Form:C1466.search",
+					"method": "ObjectMethods/search.4dm",
+					"events": [
+						"onDataChange"
+					],
+					"sizingY": "fixed",
+					"sizingX": "grow"
+				},
+				"Text1": {
+					"type": "text",
+					"text": "Sociétés",
+					"top": 9,
+					"left": 5,
+					"width": 139,
+					"height": 16,
+					"class": "label",
+					"fontWeight": "normal"
+				},
+				"LlegalStructure": {
+					"type": "text",
+					"text": "Structure juridique :",
+					"top": 82,
+					"left": 387,
+					"width": 130,
+					"height": 16,
+					"class": "label"
+				},
+				"Fdomain1": {
+					"type": "input",
+					"left": 524,
+					"top": 82,
+					"width": 418,
+					"height": 17,
+					"dataSource": "Form:C1466.currentCompany.legalStructure",
+					"sizingX": "grow",
+					"enterable": false,
+					"focusable": true
+				}
+			}
+		}
+	],
+	"geometryStamp": 749,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"method": "method.4dm",
+	"formSizeAnchor": "btnAccept",
+	"rightMargin": 5,
+	"bottomMargin": 5
+}
